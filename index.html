@@ -9,6 +9,10 @@
 </head>
 <body>
 
+    <div class="theme-bar">
+        <button id="theme-toggle" type="button">Змінити тему (День/Ніч)</button>
+    </div>
+
     <div class="resume-container">
         <header class="header">
             <div class="name-box">
@@ -25,64 +29,100 @@
 
         <div class="main-content">
             <section class="left-col">
-                <h2>Про себе</h2>
-                <div class="entry">
+                <div class="section-group">
+                    <h2>Про Себе</h2>
                     <p>Навчаюся на 2-му курсі кафедри систем захисту інформації (Кібербезпека) у Львівській політехніці. Активно поглиблюю знання у сфері автоматизації та інфраструктури, проходячи спеціалізовані курси з DevOps. Цікавлюся поєднанням розробки, безпеки та хмарних технологій.</p>
                 </div>
 
-                <h2>Досвід та Проєкти</h2>
-                <div class="entry">
-                    <h3>Розробка скриптів та Автоматизація</h3>
-                    <p class="date">Поточний період</p>
-                    <p>Розробка скриптів для автоматизації рутинних задач, розуміння принципів CI/CD та хмарної інфраструктури. Досвід роботи з Unity Framework та .NET 8.</p>
+                <div class="section-group">
+                    <h2>Досвід Та Проєкти</h2>
+                    <div class="project-item">
+                        <h3>Розробка скриптів та Автоматизація</h3>
+                        <p>Розробка скриптів для автоматизації рутинних задач, розуміння принципів CI/CD та хмарної інфраструктури. Досвід роботи з Unity Framework та .NET 8.</p>
+                    </div>
+                </div>
+
+                <div class="section-group">
+                    <h2>Відгуки</h2>
+                    <div id="comments-container">
+                        <p>Завантаження коментарів із сервера...</p>
+                    </div>
                 </div>
             </section>
 
             <aside class="right-col">
-                <h2>Освіта</h2>
-                <div class="education-item">
-                    <div class="icon">🎓</div>
-                    <div class="text">
-                        <h3>Львівська політехніка</h3>
-                        <p class="date">Бакалаврат (2-й курс)</p>
-                        <p>Спеціальність "Кібербезпека"</p>
+                <div class="section-group">
+                    <h2>Освіта</h2>
+                    <div class="side-item">
+                        <div class="black-circle">🎓</div>
+                        <div class="side-text">
+                            <h3>Львівська політехніка</h3>
+                            <p>Бакалаврат (2-й курс)</p>
+                            <p>Спеціальність "Кібербезпека"</p>
+                        </div>
                     </div>
                 </div>
 
-                <hr class="section-divider">
+                <hr class="side-divider">
 
-                <h2>Навички</h2>
-                
-                <div class="skill-item">
-                    <div class="icon">💻</div>
-                    <div class="text">
-                        <h3>Мови програмування</h3>
-                        <p>Python, C#, Bash, PowerShell</p>
+                <div class="section-group">
+                    <h2>Навички</h2>
+                    <div class="side-item">
+                        <div class="black-circle">💻</div>
+                        <div class="side-text">
+                            <h3>Мови програмування</h3>
+                            <p>Python, C#, Bash, PowerShell</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-item">
-                    <div class="icon">☁️</div>
-                    <div class="text">
-                        <h3>Хмарні платформи</h3>
-                        <p>Microsoft Azure (основний стек), AWS (базові знання)</p>
+                    <div class="side-item">
+                        <div class="black-circle">☁️</div>
+                        <div class="side-text">
+                            <h3>Хмарні платформи</h3>
+                            <p>Microsoft Azure (основний стек), AWS (базові знання)</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="skill-item">
-                    <div class="icon">⚙️</div>
-                    <div class="text">
-                        <h3>Технології</h3>
-                        <ul>
-                            <li>DevOps інструменти</li>
-                            <li>CI/CD принципи</li>
-                            <li>Unity Framework & .NET 8</li>
-                        </ul>
+                    <div class="side-item">
+                        <div class="black-circle">⚙️</div>
+                        <div class="side-text">
+                            <h3>Технології</h3>
+                            <ul>
+                                <li>DevOps інструменти</li>
+                                <li>CI/CD принципи</li>
+                                <li>Unity Framework & .NET 8</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </aside>
         </div>
+
+        <footer class="footer">
+            <div id="storage-info"></div>
+        </footer>
     </div>
 
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Зворотній зв'язок</h3>
+            <form action="https://formspree.io/f/mbdpannk" method="POST">
+                <label>Ім'я:</label>
+                <input type="text" name="name" required>
+                <label>Email:</label>
+                <input type="email" name="email" required>
+                <label>Номер телефону:</label>
+                <input type="tel" name="phone" required>
+                <label>Повідомлення:</label>
+                <textarea name="message" rows="4"></textarea>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-submit">Відправити</button>
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Закрити</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
